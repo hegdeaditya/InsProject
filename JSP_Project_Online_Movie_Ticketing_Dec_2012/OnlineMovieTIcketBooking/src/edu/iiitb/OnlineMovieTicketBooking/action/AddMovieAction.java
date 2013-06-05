@@ -22,7 +22,7 @@ import edu.iiitb.OnlineMovieTicketBooking.service.AddTheatreService;
 public class AddMovieAction extends ActionSupport{
 
 	/**
-	 * 
+	 * Test
 	 */
 	private static final long serialVersionUID = 1L;
 	private String name;
