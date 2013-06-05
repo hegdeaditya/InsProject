@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<include file="struts-default.xml" />
+<constant name="struts.enable.DynamicMethodInvocation"
+value="false" />
+<constant name="struts.devMode" value="false" />
+<!-- Add packages here -->
+<package name="struts2" extends="struts-default">
+
+
+<!-- Vijay's Part -->
+<action name="deactivateSeller" class="edu.iiitb.OnlineMovieTicketBooking.action.AdminActivateAndDeActivateLogic" method="deactivateSeller">
+<result name="deactivateSellerSuccess">manageSeller.jsp</result>
+</action>
+<action name="activateSeller" class="edu.iiitb.OnlineMovieTicketBooking.action.AdminActivateAndDeActivateLogic" method="activateSeller">
+<result name="activateSellerSuccess">manageSeller.jsp</result>
+</action>
+<action name="deactivateSubscriber" class="edu.iiitb.OnlineMovieTicketBooking.action.AdminActivateAndDeActivateLogic" method="deactivateSubscriber">
+<result name="deactivateSubscriberSuccess">manageSubscriber.jsp</result>
+</action>
+<action name="activateSubscriber" class="edu.iiitb.OnlineMovieTicketBooking.action.AdminActivateAndDeActivateLogic" method="activateSubscriber">
+<result name="activateSubscriberSuccess">manageSubscriber.jsp</result>
+</action>
+<action name="conformSeller" class="edu.iiitb.OnlineMovieTicketBooking.action.ConformSellerAction" method="execute">
+<result name="success">AdminHome.jsp</result>
+</action>
+<action name="manageSeller">
+<result>manageSeller.jsp</result>
+</action>
+<action name="manageSubscriber">
+<result>manageSubscriber.jsp</result>
+</action>
+<action name="adminHome">
+<result>AdminHome.jsp</result>
+</action>
+<action name="signUpSeller">
+<result>signUpSeller.jsp</result>
+</action>
+<action name="signUPSellerProcessing" class="edu.iiitb.OnlineMovieTicketBooking.action.SignUPSellerAction" method="execute">
+<result name="success">successSignUpSeller.jsp</result>
+<result name="input">signUpSeller.jsp</result>
+<result name="error">signUpSeller.jsp</result>
+</action>
+<action name="login" class="edu.iiitb.OnlineMovieTicketBooking.action.LoginAction" method="execute">
+<result name="seller">sellerHome.jsp</result>
+<result name="admin">AdminHome.jsp</result>
+<result name="waitingForApproval">index.jsp</result>
+<result name="registrationDeactivated">index.jsp</result>
+<result name="subscriber">subscriberHome.jsp</result>
+<result name="input">index.jsp</result>
+<result name="error">index.jsp</result>
+</action>
+<action name="logout" class="edu.iiitb.OnlineMovieTicketBooking.action.LogoutAction" method="execute">
+<result name="success">index.jsp</result>
+</action>
+<action name="showLogin">
+<result>index.jsp</result>
+</action>
+<action name="sellerHome">
+<result>sellerHome.jsp</result>
+</action>
+<action name="addMovieProcessing" class="edu.iiitb.OnlineMovieTicketBooking.action.AddMovieAction" method="execute">
+<result name="success">AddMovieSuccess.jsp</result>
+<result name="input">addMovie.jsp</result>
+<result name="error">addMovie.jsp</result>
+</action>
+<action name="listMoviesProcessing" class="edu.iiitb.OnlineMovieTicketBooking.action.ListMoviesAction" method="execute">
+<result name="success">listMovies.jsp</result>
+<result name="error">index.jsp</result>
+<result name="noMoviesAvailable">noMoviesAvailable.jsp</result>
+</action>
+<action name="addMovie" class="edu.iiitb.OnlineMovieTicketBooking.action.AddMovieAction" method="insertSessionInfo">
+<result name="success">addMovie.jsp</result>
+</action>
+<action name="addMovieDefault">
+<result>addMovie.jsp</result>
+</action>
+<action name="showdeleteMovie" class="edu.iiitb.OnlineMovieTicketBooking.action.DeleteMovieAction" method="setSessionfortheatre">
+<result>listMovies.jsp</result>
+</action>
+<action name="deleteMovie" class="edu.iiitb.OnlineMovieTicketBooking.action.DeleteMovieAction" method="execute">
+<result name="success">listMovies.jsp</result>
+</action>
+
+<action name="addTheatre">
+<result>addTheatre.jsp</result>
+</action>
+<action name="addTheatreProcessing" class="edu.iiitb.OnlineMovieTicketBooking.action.AddTheatreAction" method="execute">
+<result name="success">sellerHome.jsp</result>
+<result name="input">addTheatre.jsp</result>
+<result name="error">addTheatre.jsp</result>
+</action>
+<action name="showTheatreInfo" class="edu.iiitb.OnlineMovieTicketBooking.action.ShowTheatreInfoAction" method="execute">
+<result name="success">showTheatreInfo.jsp</result>
+<result name="error">index.jsp</result>
+</action>
+<action name="TheatreInfo">
+	<result>showTheatreInfo.jsp</result>
+</action>
+
+
+<!--  Anuj Part  -->
+<action name="test" class="edu.iiitb.OnlineMovieTicketBooking.action.testAction" method="execute">
+<result name="initialized">reserveSeat.jsp</result>
+<result name="null">noSeatsAvailable.jsp</result>
+</action>
+<action name="reserveSeat" class="edu.iiitb.OnlineMovieTicketBooking.action.reserveSeatAction" method="execute">
+<result name="SUCCESS">bookingSummary.jsp</result>
+<result name="NoSelection">reserveSeat.jsp</result>
+<result name="exceed">exceededPayment.jsp</result>
+<result name="FAILURE">Login.jsp</result>
+</action>
+<action name="bookingSummary" class="edu.iiitb.OnlineMovieTicketBooking.action.bookingSummaryAction" method="execute">
+<result name="SUCCESS">confirmBooking.jsp</result>
+<result name="HALFSUCCESS">index.jsp</result>
+<result name="FAILURE">index.jsp</result>
+<result name="ERROR">confirmBookingNoEmail.jsp</result>
+</action>
+<!--
+ <action name="viewTickets" class="edu.iiitb.OnlineMovieTicketBooking.action.ViewTicketsAction" 
+			method="execute"> <result name="success">viewTickets.jsp</result> </action> 
+-->
+<action name="viewTickets">
+<result>viewTickets.jsp</result>
+</action>
+<action name="cancelTicket" class="edu.iiitb.OnlineMovieTicketBooking.action.cancelTicketAction" method="execute">
+<result name="TicketCancelled">viewTickets.jsp</result>
+<result name="cannotCancel">viewTickets.jsp</result>
+<result name="FAILURE">Login.jsp</result>
+<result name="input">viewTickets.jsp</result>
+</action>
+
+
+
+
+
+<!-- Anuj Part -->
+
+<action name="test" class ="edu.iiitb.OnlineMovieTicketBooking.action.testAction" method="execute">
+	<result name="initialized">reserveSeat.jsp</result>
+	<result name="null">noSeatsAvailable.jsp</result>
+</action>
+
+
+<action name="reserveSeat" class ="edu.iiitb.OnlineMovieTicketBooking.action.reserveSeatAction" method="execute">
+	<result name="SUCCESS">bookingSummary.jsp</result>
+	<result name="NoSelection">reserveSeat.jsp</result>
+	<result name="exceed">exceededPayment.jsp</result>
+	<result name="FAILURE">index.jsp</result>
+</action>
+
+<action name="bookingSummary" class ="edu.iiitb.OnlineMovieTicketBooking.action.bookingSummaryAction" method="execute">
+	<result name="SUCCESS">confirmBooking.jsp</result>
+	<result name = "HALFSUCCESS">index.jsp</result>
+	<result name="FAILURE">index.jsp</result>
+	<result name="ERROR">confirmBookingNoEmail.jsp</result>
+</action>
+
+<!-- 
+<action name="viewTickets" class="edu.iiitb.OnlineMovieTicketBooking.action.ViewTicketsAction" method="execute">
+<result name="success">viewTickets.jsp</result>
+</action>
+
+ -->
+<action name="viewTickets">
+<result >viewTickets.jsp</result>
+</action>
+
+<action name="cancelTicket" class ="edu.iiitb.OnlineMovieTicketBooking.action.cancelTicketAction" method="execute">
+<result name="TicketCancelled">viewTickets.jsp</result>
+<result name="cannotCancel">viewTickets.jsp</result>
+<result name="FAILURE">Login.jsp</result>
+<result name="input">viewTickets.jsp</result>
+
+</action>
+
+
+
+
+
+
+
+<!-- Abhilash's part -->
+
+		
+		
+		<action name="viewer" class="edu.iiitb.OnlineMovieTicketBooking.action.viewer">
+			<result name="success">viewercity.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="login2" class="edu.iiitb.OnlineMovieTicketBooking.action.subscriberLoginAction">
+			<result name="success">subscribermainpage.jsp</result>
+			<result name="error">userlogin.jsp</result>
+		</action>
+		
+		
+		
+		<action name="regsub" class="edu.iiitb.OnlineMovieTicketBooking.action.RegisterSubscriber">
+			<result name="success">successRegitrationOfSubscriber.jsp</result>
+			<result name="error">Registersubscriber.jsp</result>
+		</action>
+		
+		
+
+		<action name="cities" class="edu.iiitb.OnlineMovieTicketBooking.action.subscribertheatreAction">
+            <result name="success">subscribertheatreselection.jsp</result>
+            <result name="selectError">subscribermainpage.jsp</result>
+            
+        </action>
+        
+        <action name="theatres" class="edu.iiitb.OnlineMovieTicketBooking.action.subscribermovieAction">
+           <result name="success">subscribermovieselection.jsp</result>
+        </action>
+        
+        <action name="movies" class="edu.iiitb.OnlineMovieTicketBooking.action.subscriberclassAction">
+           <result name="success">subscriberclassselection.jsp</result>
+        </action>
+        
+        <action name="classes" class="edu.iiitb.OnlineMovieTicketBooking.action.subscriberdateAction">
+           <result name="success">subscriberdateselection.jsp</result>
+        </action>
+        
+        <action name="dates" class="edu.iiitb.OnlineMovieTicketBooking.action.subscribertimeAction">
+           <result name="success">subscribertimeselection.jsp</result>
+        </action>
+        
+         <action name="times" class="edu.iiitb.OnlineMovieTicketBooking.action.Ctm6">
+           <result name="success">reserveSeat.jsp</result>
+           <result name="error">noSeatsAvailable.jsp</result>
+        </action>
+        
+
+
+        
+        <action name="viewercities" class="edu.iiitb.OnlineMovieTicketBooking.action.viewertheatreAction">
+            <result name="success">viewertheatre.jsp</result>
+        </action>
+        
+        <action name="viewertheatres" class="edu.iiitb.OnlineMovieTicketBooking.action.viewermovieAction">
+           <result name="success">viewermovie.jsp</result>
+        </action>
+        
+        <action name="viewermovies" class="edu.iiitb.OnlineMovieTicketBooking.action.viewerclassAction">
+           <result name="success">viewerclass.jsp</result>
+        </action>
+        
+        <action name="viewerclasses" class="edu.iiitb.OnlineMovieTicketBooking.action.viewerdateAction">
+           <result name="success">viewerdate.jsp</result>
+        </action>
+        
+        <action name="viewerdates" class="edu.iiitb.OnlineMovieTicketBooking.action.viewertimeAction">
+           <result name="success">viewertime.jsp</result>
+        </action>
+        
+         <action name="viewertimes" class="edu.iiitb.OnlineMovieTicketBooking.action.viewerctm6">
+           <result name="success">thankuVisitingPage.jsp</result>
+        </action>
+        
+         <action name="chpwdSubscriber" class="edu.iiitb.OnlineMovieTicketBooking.action.ChangepasswordAction">
+           <result name="success">index.jsp</result>
+           <result name="input">subscriberchangepassword.jsp</result>
+           <result name="error">subscriberchangepassword.jsp</result>
+        </action>
+        
+          <action name="chpwdSeller" class="edu.iiitb.OnlineMovieTicketBooking.action.ChangepasswordAction" method="SellerChangePassword">
+           <result name="success">index.jsp</result>
+           <result name="input">sellerChangepassword.jsp</result>
+           <result name="error">sellerChangepassword.jsp</result>
+        </action>
+        
+          <action name="chpwdAdmin" class="edu.iiitb.OnlineMovieTicketBooking.action.ChangepasswordAction" method="AdminChangePassword">
+           <result name="success">index.jsp</result>
+           <result name="input">adminChangepassword.jsp</result>
+           <result name="error">adminChangepassword.jsp</result>
+        </action>
+        
+		<action name="forgotpassword" >
+			<result>forgotpassword.jsp</result>
+		</action>
+		
+		<action name="forgotpasswordsubscriber" class="edu.iiitb.OnlineMovieTicketBooking.action.forgotpasswordsubscriber">
+           <result name="success">userlogin.jsp</result>
+           <result name="error">forgotpassword.jsp</result>
+        </action>
+		
+        <action name="adminlogin" >
+            <result >adminlogin.jsp</result>
+        </action>
+        
+        <action name="userlogin" >
+            <result >userlogin.jsp</result>
+        </action>
+        
+         <action name="viewerlogin" >
+            <result >viewerlogin.jsp</result>
+        </action>
+        
+        
+        
+        <action name="sellerlogin" >
+            <result >sellerlogin.jsp</result>
+        </action>
+		
+		
+			
+		<action name="cancelticket" >
+			<result>anujcancelticket.jsp</result>
+		</action>
+		
+		<action name="trailer1">
+			<result>trailer.jsp</result>
+		</action>
+		
+		<action name="movie1Trailer">
+			<result>movie1Trailer.jsp</result>
+		</action>
+		
+		<action name="movie2Trailer">
+			<result>movie2Trailer.jsp</result>
+		</action>
+		
+		<action name="movie3Trailer">
+			<result>movie3Trailer.jsp</result>
+		</action>
+		
+		<action name="subscriberHome" class="edu.iiitb.OnlineMovieTicketBooking.action.LoginAction" method="setParametersForSubscriberHome">
+			<result name="success">subscriberHome.jsp</result>
+		</action>
+		
+		<action name="takeToWhoWeAre">
+			<result>whoWeAre.jsp</result>
+		</action>
+		
+		<action name="takeToHome">
+			<result>testFinal.html</result>
+		</action>
+		
+		<action name="changepassword" >
+			<result>subscriberchangepassword.jsp</result>
+		</action>
+		
+		<action name="changepasswordSeller" >
+			<result>sellerChangepassword.jsp</result>
+		</action>
+		<action name="changepasswordAdmin" >
+			<result>adminChangepassword.jsp</result>
+		</action>
+		
+		
+				
+		<action name="newRegisterseller">
+			<result>signUpSeller.jsp</result>
+		</action>
+		
+		<action name="newRegistersubscriber">
+			<result>Registersubscriber.jsp</result>
+		</action>
+		
+		
+		<!-- 
+		<action name="logout" class="edu.iiitb.OnlineMovieTicketBooking.action.LogoutAction">
+            <result >index.jsp</result>
+        </action>
+       
+		 -->
+		
+		 <action name="home" >
+            <result >index.jsp</result>
+        </action>
+        
+</package>
+</struts>

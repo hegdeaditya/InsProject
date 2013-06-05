@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="/struts-tags" prefix="s" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#radio1").buttonset();
+  });
+  </script>
+
+<title>Insert title here</title>
+</head>
+<body style="font-size:62.5%;">
+
+Hello. this is jsp page!
+
+<div id="radio1">
+	<input type="radio" id="radio1" name="radio" /><label for="radio1">Choice 1</label>
+	<input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Choice 2</label>
+	<input type="radio" id="radio3" name="radio" /><label for="radio3">Choice 3</label>
+</div>
+
+</body>
+</html>

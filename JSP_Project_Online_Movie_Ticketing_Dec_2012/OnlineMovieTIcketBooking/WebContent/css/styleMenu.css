@@ -1,0 +1,91 @@
+/* BEGIN HORIZONTAL DROP-MENU */
+#navbar{
+position:relative;
+width: 100%;
+margin: 0 0 0 45px; /**adjust as needed**/
+padding:0;
+text-align:center;
+}
+#navbar li {
+list-style: none;
+font-size: 12px;
+float: left;
+text-align:center;
+}
+/**top level menu**/
+#navbar li a {
+display: block;
+text-decoration: none;
+margin-right: 12px; /* space between links */
+color: #FFF;
+width: 9em; /* adjust as needed or use auto */
+padding: 8px;
+font-weight:bold;
+line-height: 5.50em;
+background: #C33;
+/**CSS Gradients for browsers that support it**/ 
+background: -moz-linear-gradient(#C33, #111); 
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #C33)); 
+background: -webkit-linear-gradient(#C33, #111); 
+background: -o-linear-gradient(#C33, #111);
+background: -ms-linear-gradient(#C33, #111);
+background: linear-gradient(#C33, #111);
+/* gradient filters for IE6-9 */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C33333', endColorstr='#111111',GradientType=0 ); 
+/**rounded borders for browsers that support it**/
+-moz-border-radius: 25px;
+-webkit-border-radius:25px;
+border-radius: 25px;
+}
+/**top menu style on mouse over**/
+
+#navbar li:hover > a {
+/*color: #FFF;*/
+background: #333;
+background: -moz-linear-gradient(#333, #EAEAEA);
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #EAEAEA),color-stop(1, #333)); 
+background: -webkit-linear-gradient(#333, #EAEAEA); 
+background: -o-linear-gradient(#333, #EAEAEA);
+background: -ms-linear-gradient(#333, #EAEAEA);
+background: linear-gradient(#333, #EAEAEA);
+/* gradient filters for IE6-9 */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#EAEAEA',GradientType=0 )
+}
+/**sub-menu**/
+#navbar li ul {
+display: none;
+text-align:center;
+margin:0;
+padding:0 1em;
+background:none;
+}
+/**sub-menu, help for IE6**/
+#navbar li:hover ul, 
+#navbar li.hover ul {
+display: block;
+position: absolute;
+padding: 0;
+}
+#navbar li:hover li, 
+#navbar li.hover li {
+float: none;}
+/**drop-menu style**/
+#navbar li:hover li a, #navbar li.hover li a {
+width: 9em; /* adjust width as needed or use auto */
+margin-top: 0.50em;
+}
+/**drop-menu style on mouse over**/
+#navbar li li a:hover {
+background:maroon;
+color:gold;
+}
+/* Clear floated elements at the end*/
+#navbar:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+/**end Horizontal drop-menus**/

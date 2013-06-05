@@ -1,0 +1,141 @@
+@charset utf-8;
+
+/*
+Theme Name :  vSlider
+Description:  New generation slider
+Author URI:   http://www.wptitans.com/
+Version:      0.1
+*/
+/*
+
+
+*/
+/* ================================================================================== */
+/* == CSS RESET & HTML5 Support ===================================================== */
+/* ================================================================================== */
+.clearfix:after {
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+
+.clearfix {
+display:inline-block;
+zoom:1;
+}
+
+* html .clearfix {
+height:1%;
+}
+
+/* Hides from IE-mac \*/
+.clearfix {
+display:block;
+}
+
+.clearleft {
+clear:left!important;
+}
+
+.clearright {
+clear:right!important;
+}
+
+/* ========================================= Reset =========================================  */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,menu,time,mark,audio,video {
+margin:0;
+padding:0;
+border:0;
+outline:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+}
+
+article,aside,figure,footer,header,hgroup,nav,section {
+display:block;
+}
+
+ul {
+list-style:none;
+}
+
+blockquote,q {
+quotes:none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+content:'';
+content:none;
+}
+
+a {
+margin:0;
+padding:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+color:#111;
+text-decoration:none;
+}
+
+ins {
+background-color:#ff9;
+color:#000;
+text-decoration:none;
+}
+
+mark {
+background-color:#ff9;
+color:#000;
+font-style:italic;
+font-weight:700;
+}
+
+del {
+text-decoration:line-through;
+}
+
+abbr[title],dfn[title] {
+border-bottom:1px dotted #000;
+cursor:help;
+}
+
+table {
+border-collapse:collapse;
+border-spacing:0;
+}
+
+hr {
+display:block;
+height:1px;
+border:0;
+border-top:1px solid #ccc;
+margin:1em 0;
+padding:0;
+}
+
+input,select {
+vertical-align:middle;
+}
+
+input[type=submit] {
+outline:none;
+border:none;
+}
+
+input:focus,textarea:focus {
+outline:none;
+}
+
+body { background:url(i/exclusive_paper.png); }
+
+/* ================================================================================== */
+/* ==  vSLIDER STYLINGS =========================================================== */
+/* ================================================================================== */
+
+
+
+.vSlider { margin:60px auto; position:relative; border:1px solid #ddd; -moz-box-shadow:0px 0px 41px #ccc; box-shadow:0px 0px 41px #ccc; overflow:hidden;  }
